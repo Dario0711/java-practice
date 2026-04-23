@@ -11,20 +11,25 @@ public class TemperatureConverter {
 	public static void convertTemp() {
 		Scanner myScanner = new Scanner(System.in);
 		
-		System.out.println("Enter Temperature in Celsius");
+		System.out.println("Enter Temperature in Celsius (or 'quit' to exit)");
 		
-		do {
+		while (true) {
+			String input = myScanner.nextLine();
+			
+			if (input.equalsIgnoreCase("quit")) {
+				System.out.println("Goodbye!");
+				break;
+			}
+			
 			try {
-				double temperatureInCelsius = myScanner.nextDouble();
-				
+				double temperatureInCelsius = Double.parseDouble(input);
 				double convertedTemperatureInFahrenheit = (temperatureInCelsius * (9.0 / 5)) + 32;
-				
 				System.out.println("Temperature in Fahrenheit is: " + convertedTemperatureInFahrenheit);
 				
-			} catch (InputMismatchException e) {
-				System.out.println("Only Numbers are valid");
-				myScanner.next();
+			} catch (NumberFormatException e) {
+				System.out.println("Only numbers or 'quit' are valid");
 			}
-		} while (true);
+		}
 	}
+}
 }
