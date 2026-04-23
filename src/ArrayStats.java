@@ -17,10 +17,9 @@ public class ArrayStats {
 				lowestNumber = array[i];
 			}
 		}
-		System.out.println(highestNumber);
-		System.out.println(lowestNumber);
-		System.out.println(arraySum);
-		arrayAverage += arraySum;
-		System.out.println(arrayAverage / array.length);
+		System.out.println("Max: " + highestNumber);
+		System.out.println("Min: " + lowestNumber);
+		System.out.println("Sum: " + arraySum);
+		System.out.println("Average: " + (double) arraySum / array.length);
 	}
 }
