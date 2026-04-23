@@ -31,24 +31,24 @@ public class SimpleCalculator {
 		}
 		
 		
-		double rechnung = 0; // Initialized to 0
+		double result = 0; // Initialized to 0
 		
 		if (c == '+') {
-			rechnung = firstNumber + secondNumber;
-			System.out.println("Result: " + rechnung);
+			result = firstNumber + secondNumber;
+			System.out.println("Result: " + result);
 		}
 		else if (c == '-') {
-			rechnung = firstNumber - secondNumber;
-			System.out.println("Result: " + rechnung);
+			result = firstNumber - secondNumber;
+			System.out.println("Result: " + result);
 		}
 		else if (c == '*') {
-			rechnung = firstNumber * secondNumber;
-			System.out.println("Result: " + rechnung);
+			result = firstNumber * secondNumber;
+			System.out.println("Result: " + result);
 		}
 		else if (c == '/') {
 			if (secondNumber != 0) {
-				rechnung = firstNumber / secondNumber;
-				System.out.println("Result: " + rechnung);
+				result = firstNumber / secondNumber;
+				System.out.println("Result: " + result);
 			}
 			else {
 				System.out.println("Error: Cannot divide by zero.");
