@@ -2,11 +2,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;  // Import the Scanner class
 
-public class SimpleCalculator
-{
+public class SimpleCalculator {
 	
-	static void main()
-	{
+	static void main() {
 		ConvertTemp();
 	}
 	
@@ -20,13 +18,14 @@ public class SimpleCalculator
 		System.out.println("Enter calculationway (+, -, *, /):");
 		char c = ' ';
 		boolean validOperator = false;
-	
+		
 		while (!validOperator) {
 			c = myScanner.next().charAt(0);
 			
 			if (c == '+' || c == '-' || c == '*' || c == '/') {
 				validOperator = true;
-			} else {
+			}
+			else {
 				System.out.println("Invalid input. Please enter +, -, *, or /:");
 			}
 		}
@@ -37,23 +36,29 @@ public class SimpleCalculator
 		if (c == '+') {
 			rechnung = firstNumber + secondNumber;
 			System.out.println("Result: " + rechnung);
-		} else if (c == '-') {
+		}
+		else if (c == '-') {
 			rechnung = firstNumber - secondNumber;
 			System.out.println("Result: " + rechnung);
-		} else if (c == '*') {
+		}
+		else if (c == '*') {
 			rechnung = firstNumber * secondNumber;
 			System.out.println("Result: " + rechnung);
-		} else if (c == '/') {
+		}
+		else if (c == '/') {
 			if (secondNumber != 0) {
 				rechnung = firstNumber / secondNumber;
 				System.out.println("Result: " + rechnung);
-			} else {
+			}
+			else {
 				System.out.println("Error: Cannot divide by zero.");
 			}
-		} else {
+		}
+		else {
 			System.out.println("Invalid operator.");
 		}
 	}
+	
 	public static double getValidNumber(Scanner scanner, String prompt) {
 		double number = 0;
 		boolean isValid = false;
