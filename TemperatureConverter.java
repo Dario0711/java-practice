@@ -4,9 +4,8 @@ import java.util.Scanner;  // Import the Scanner class
 public class TemperatureConverter {
 	
 	public static void main(String[] args) {
-		ConvertTemp();
+		convertTemp();
 	}
-	
 	
 	public static void convertTemp() {
 		Scanner myScanner = new Scanner(System.in);
@@ -31,5 +30,4 @@ public class TemperatureConverter {
 			}
 		}
 	}
-}
 }

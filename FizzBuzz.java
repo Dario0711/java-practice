@@ -3,9 +3,8 @@ public class FizzBuzz {
 		fizzbuzz(100);
 	}
 	
-	public static void fizzbuzz(int numbegr) {
-		for (int i = 1; number >= i; i = i + 1) {
-			
+	public static void fizzbuzz(int number) {
+		for (int i = 1; i <= number; i++) {
 			if (i % 3 == 0) {
 				if (i % 5 == 0) {
 					System.out.println(i + " FizzBuzz");
