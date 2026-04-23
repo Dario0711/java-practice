@@ -1,4 +1,3 @@
-
 import java.util.InputMismatchException;
 import java.util.Scanner;  // Import the Scanner class
 
@@ -32,7 +31,6 @@ public class TemperatureConverter
 				System.out.println("Only Numbers are valid");
 				myScanner.next();
 			}
-		}
-		while (true);
+		} while (true);
 	}
 }
