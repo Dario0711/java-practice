@@ -13,7 +13,7 @@ public class ArrayStats {
 			if (highestNumber < array[i]) {
 				highestNumber = array[i];
 			}
-			else if (lowestNumber > array[i]) {
+			if (lowestNumber > array[i]) {
 				lowestNumber = array[i];
 			}
 		}
