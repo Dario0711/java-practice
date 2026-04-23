@@ -5,11 +5,11 @@ import java.util.Scanner;  // Import the Scanner class
 public class SimpleCalculator {
 	
 	public static void main(String[] args) {
-		ConvertTemp();
+		runCalculator();
 	}
 	
 	
-	public static void ConvertTemp() {
+	public static void runCalculator() {
 		Scanner myScanner = new Scanner(System.in);
 		
 		double firstNumber = getValidNumber(myScanner, "Enter First Number:");
