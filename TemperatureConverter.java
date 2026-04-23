@@ -3,7 +3,7 @@ import java.util.Scanner;  // Import the Scanner class
 
 public class TemperatureConverter {
 	
-	static void main() {
+	public static void main(String[] args) {
 		ConvertTemp();
 	}
 	

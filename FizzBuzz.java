@@ -1,9 +1,9 @@
 public class FizzBuzz {
-	static void main(String[] args) {
+	public static void main(String[] args) {
 		fizzbuzz(100);
 	}
 	
-	public static void fizzbuzz(int number) {
+	public static void fizzbuzz(int numbegr) {
 		for (int i = 1; number >= i; i = i + 1) {
 			
 			if (i % 3 == 0) {
