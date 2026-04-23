@@ -14,13 +14,8 @@ public class StringReverser {
 				System.out.println("Goodbye!");
 				break;
 			}
-			try {
-				for (int i = input.length() - 1; i >= 0; i--) {
-					output += input.charAt(i);
-					System.out.println(input.charAt(i));
-				}
-			} catch (NumberFormatException e) {
-				System.out.println("Only numbers or 'quit' are valid");
+			for (int i = input.length() - 1; i >= 0; i--) {
+				output += input.charAt(i);
 			}
 			System.out.println(output);
 		}
