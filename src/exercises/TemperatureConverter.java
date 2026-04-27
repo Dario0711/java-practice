@@ -1,4 +1,5 @@
-import java.util.InputMismatchException;
+package exercises;
+
 import java.util.Scanner;  // Import the Scanner class
 
 public class TemperatureConverter {

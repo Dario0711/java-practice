@@ -1,3 +1,5 @@
+package exercises;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;  // Import the Scanner class
 
@@ -6,7 +8,6 @@ public class SimpleCalculator {
 	public static void main(String[] args) {
 		runCalculator();
 	}
-	
 	
 	public static void runCalculator() {
 		Scanner myScanner = new Scanner(System.in);
@@ -28,7 +29,6 @@ public class SimpleCalculator {
 				System.out.println("Invalid input. Please enter +, -, *, or /:");
 			}
 		}
-		
 		
 		double result = 0; // Initialized to 0
 		

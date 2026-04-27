@@ -1,9 +1,13 @@
+package exercises;
+
 import java.util.Scanner;
 
 public class StringReverser {
+	
 	public static void main(String[] args) {
 		reverseString();
 	}
+	
 	public static void reverseString() {
 		Scanner myScanner = new Scanner(System.in);
 		System.out.println("Enter String you want to reverse (or ':quit' to exit)");

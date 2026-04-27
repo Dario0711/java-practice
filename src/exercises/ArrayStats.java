@@ -1,8 +1,12 @@
+package exercises;
+
 public class ArrayStats {
+	
 	public static void main(String[] args) {
 		int[] arr = {10, 20, 22, 41, 5, 11, 25, 30, 40, 91};
 		getArrayStats(arr);
 	}
+	
 	public static void getArrayStats(int[] array) {
 		int highestNumber = array[0];
 		int lowestNumber = array[0];
