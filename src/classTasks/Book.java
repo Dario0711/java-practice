@@ -29,7 +29,7 @@ public class Book {
 		this.pagecount = pagecount;
 	}
 	
-	private String returnBookDescription() {
+	public String returnBookDescription() {
 		String bookInformation;
 		String read;
 		if (isRead) {
@@ -42,7 +42,7 @@ public class Book {
 		return bookInformation;
 	}
 	
-	private void markAsRead() {
+	public void markAsRead() {
 		isRead = true;
 	}
 }
