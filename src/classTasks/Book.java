@@ -7,12 +7,6 @@ public class Book {
 	public int pagecount;
 	public boolean isRead = false;
 	
-	public Book(String title, String author, int pagecount) {
-		this.title = title;
-		this.author = author;
-		this.pagecount = pagecount;
-	}
-	
 	public static void main(String[] args) {
 		Book lotr = new Book("Lord of the Rings", "J.R.R. Tolkien", 510);
 		Book hp = new Book("Harry Potter", "J.K. Rowling", 322);
@@ -27,6 +21,12 @@ public class Book {
 		System.out.println(lotr.returnBookDescription());
 		System.out.println(hp.returnBookDescription());
 		System.out.println(zuffenhausen.returnBookDescription());
+	}
+	
+	public Book(String title, String author, int pagecount) {
+		this.title = title;
+		this.author = author;
+		this.pagecount = pagecount;
 	}
 	
 	private String returnBookDescription() {
