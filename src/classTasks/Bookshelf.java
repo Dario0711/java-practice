@@ -5,50 +5,54 @@ import java.util.List;
 
 public class Bookshelf {
 	
-	public List<Book> bookList = new ArrayList<>();
-	
-	public Bookshelf() {
-	
-	}
+	// Encapsulation: private list
+	private List<Book> books = new ArrayList<>();
 	
 	public static void main(String[] args) {
-		BookshelfCLI.callBookshelfCLi();
+		BookshelfCLI.run();
 	}
 	
-	public void addBookToBookshelf(Book book) {
-		// if book is already in booklsit then do nothing
-		if (!bookList.contains(book)) {
-			bookList.add(book);
-			System.out.println("Added Book: \"" + book.title + "\" to the Bookshelf");
-		}
-		else {
-			System.out.println("Book is already in the Bookshelf");
+	public void add(Book book) {
+		if (!books.contains(book)) {
+			books.add(book);
 		}
 	}
 	
-	public String listAllBooks() {
-		String allBooks = "";
+	public String list() {
+		if (books.isEmpty()) {
+			return "Empty";
+		}
 		
-		for (Book book : bookList) {
-			if (allBooks == "") {
-				allBooks += book.title;
-			}
-			else {
-				allBooks += ", " + book.title;
-				
-			}
+		List<String> titles = new ArrayList<>();
+		for (Book book : books) {
+			titles.add(book.getTitle());
 		}
-		return allBooks;
+		return String.join(", ", titles);
+	}
+	
+	public List<Book> getBooks() {
+		return books;
 	}
 	
 	public int countUnread() {
-		int size = 0;
-		
-		for (Book book : bookList) {
-			if (!book.isRead) {
-				size++;
+		int count = 0;
+		// Fixed: Changed bookList to books
+		for (Book book : books) {
+			if (!book.isRead()) {
+				count++;
 			}
 		}
-		return size;
+		return count;
+	}
+	
+	public boolean markRead(String title) {
+		// Fixed: Changed bookList to books
+		for (Book book : books) {
+			if (book.getTitle().equalsIgnoreCase(title)) {
+				book.markAsRead();
+				return true;
+			}
+		}
+		return false;
 	}
 }

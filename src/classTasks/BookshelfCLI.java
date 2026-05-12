@@ -5,72 +5,60 @@ import java.util.Scanner;
 
 public class BookshelfCLI {
 	
-	public static void callBookshelfCLi() {
-		Bookshelf shelfi = new Bookshelf();
-		Scanner myScanner = new Scanner(System.in);
+	// Renamed: callBookshelfCLi -> run
+	public static void run() {
+		Bookshelf shelf = new Bookshelf();
+		Scanner scanner = new Scanner(System.in);
 		
-		// Fixed: Updated prompt to match logic
-		System.out.println("Enter command: 'add', 'list', 'read', 'unread' or 'quit' to exit");
+		System.out.println("Enter command: 'add', 'list', 'read', 'unread' or 'quit'");
 		
 		while (true) {
-			String input = myScanner.nextLine();
+			String input = scanner.nextLine().toLowerCase();
 			
-			switch (input.toLowerCase()) {
+			switch (input) {
 				case "quit":
 					System.out.println("Goodbye!");
 					return;
 				case "add":
-					System.out.println("Please enter the title of the book: ");
-					String title = myScanner.nextLine();
-					
-					System.out.println("Please enter the author of the book: ");
-					String author = myScanner.nextLine();
-					
-					int pages = -1;
-					while (pages < 0) {
-						System.out.println("Please enter the amount of pages: ");
-						try {
-							pages = myScanner.nextInt();
-							myScanner.nextLine();
-						} catch (InputMismatchException e) {
-							myScanner.nextLine();
-							System.out.println("Invalid input. Please enter a number.");
-						}
-					}
-					
-					Book test = new Book(title, author, pages);
-					System.out.println(test.returnBookDescription() + " has been created!");
-					shelfi.addBookToBookshelf(test);
+					handleAdd(shelf, scanner);
 					break;
-				
 				case "list":
-					System.out.println(shelfi.listAllBooks());
+					System.out.println(shelf.list());
 					break;
 				case "read":
-					System.out.println("Please enter the title of the book you want to mark as read: ");
-					String bookToMark = myScanner.nextLine();
-					boolean found = false;
-					for (Book book : shelfi.bookList) {
-						if (book.title.equalsIgnoreCase(bookToMark)) {
-							book.markAsRead();
-							System.out.println("The book with the title " + book.title + " has been marked as read");
-							found = true;
-							break;
-						}
-						
-					}
-					if (!found) {
-						System.out.println("Book has not been found!");
+					System.out.println("Enter title to mark as read: ");
+					String title = scanner.nextLine();
+					if (!shelf.markRead(title)) {
+						System.out.println("Book not found!");
 					}
 					break;
 				case "unread":
-					System.out.println(shelfi.countUnread());
+					System.out.println("Unread count: " + shelf.countUnread());
 					break;
-				
 				default:
 					System.out.println("Unknown command.");
-					break;
 			}
 		}
+	}
+	
+	// Extracted logic to keep the switch statement clean
+	private static void handleAdd(Bookshelf shelf, Scanner scanner) {
+		System.out.println("Title: ");
+		String title = scanner.nextLine();
+		System.out.println("Author: ");
+		String author = scanner.nextLine();
+		
+		int pages = -1;
+		while (pages < 0) {
+			System.out.println("Pages: ");
+			try {
+				pages = scanner.nextInt();
+				scanner.nextLine();
+			} catch (InputMismatchException e) {
+				scanner.nextLine();
+				System.out.println("Invalid input. Enter a number.");
+			}
+		}
+		shelf.add(new Book(title, author, pages));
 	}
 }
